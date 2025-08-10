@@ -38,6 +38,34 @@
         font-weight: 700;
         font-style: normal;
     }
+
+    :root {
+        --fs-62: calc(62 / 16 * 1rem);
+        --fs-50: calc(50 / 16 * 1rem);
+        --fs-38: calc(38 / 16 * 1rem);
+        --fs-34: calc(34 / 16 * 1rem);
+        --fs-24: calc(24 / 16 * 1rem);
+        --fs-20: calc(20 / 16 * 1rem);
+        --fs-18: calc(18 / 16 * 1rem);
+        --fs-16: calc(16 / 16 * 1rem);
+        --fs-14: calc(14 / 16 * 1rem);
+    }
+
+    h1 {
+        font-size: var(--fs-38);
+
+        @media (width >= calc(700 / 16 * 1rem)) {
+            font-size: var(--fs-62);
+        }
+    }
+
+    h2 {
+        font-size: var(--fs-34);
+
+        @media (width >= calc(700 / 16 * 1rem)) {
+            font-size: var(--fs-50);
+        }
+    }
 }
 
 @layer colors {
@@ -71,8 +99,9 @@
     }
 
     body {
-        margin: 0;
         min-height: 50vh;
+        font-family: 'Inter', sans-serif;
+        font-size: var(--fs-20);
     }
     
     img {
@@ -84,8 +113,17 @@
     h1, 
     h2, 
     h3 {
-        margin: 0;
         line-height: 1.1;
+        font-family: 'Martian Mono', monospace;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+        background: var(--text-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
     }
 
     p {
